@@ -2,7 +2,7 @@
 
 This project can be used to run clang-format on every push using Github actions. Uses ~~Microsoft~~ **.clang-format file** codestyle by default.
 
-**Also doesn't format files in the components/ directory.**
+**It also doesn't format files in the components/ directory.**
 
 ## Usage
 
@@ -12,8 +12,20 @@ Create a `formatter.yml` file in `.github/workflows/`.
 Paste this code into the file:
 
 ```yml
-on: push
-name: clang-format Code Formatter
+name: "Run Clang-Format in Cpp files"
+
+# Controls when the action will run. 
+on:
+  # Triggers the workflow on push or pull request events but only for the master branch
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   lint:
     name: clang-format Code Formatter
