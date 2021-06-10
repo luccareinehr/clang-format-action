@@ -2,7 +2,8 @@
 
 This project can be used to run clang-format on every push using Github actions. Uses ~~Microsoft~~ **.clang-format file** codestyle by default.
 
-**Clang-Format runs in the branch that triggers the action (in the code below, it's always the master branch)**
+**Clang-Format runs in the branch that triggers the action (in the code below, it's always the master branch).**
+
 **It also doesn't format files in the components/ directory.**
 
 ## Usage
