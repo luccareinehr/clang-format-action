@@ -1,6 +1,8 @@
 # Clang format Github action
 
-This project can be used to run clang-format on every push using Github actions. Uses Microsoft codestyle by default.
+This project can be used to run clang-format on every push using Github actions. Uses ~~Microsoft~~ **.clang-format file** codestyle by default.
+
+**Also doesn't format files in the components/ directory.**
 
 ## Usage
 
@@ -18,7 +20,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Clang Code Formatter
-      uses: ivanludvig/clang-format-action@v1.4
+      uses: luccareinehr/clang-format-action
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
